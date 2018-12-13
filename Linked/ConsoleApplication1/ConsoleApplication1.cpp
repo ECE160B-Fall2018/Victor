@@ -26,8 +26,6 @@ int main()
 		
 		temp1->num = 1 + i;
 		temp2->num = 3 + i;
-		cout << temp1->num << endl;
-		cout << temp2->num << endl;
 		temp1->next = (struct linked *)malloc(sizeof(struct linked));
 		temp2->next = (struct linked *)malloc(sizeof(struct linked));
 		temp1 = temp1->next;
@@ -47,6 +45,17 @@ int main()
 		
 		ptr1 = ptr1->next;
 		ptr2 = ptr2->next;
+	}
+	
+	temp3 = ptr3;
+	
+	for (int i = 0; i < 2; i++)
+	{
+		temp2 = temp3->next;
+		temp3->num += temp2->num / 10;
+		temp2->num %= 10;
+		
+		temp3 = temp2;
 	}
 	
 	for (int i = 0; i < 3; i++)
